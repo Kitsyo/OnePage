@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('description');
-            $table->string('date_open');
-            $table->string('date-close');
+            $table->dateTime('date_open');
+            $table->dateTime('date_close');
             $table->timestamps();
         });
     }
