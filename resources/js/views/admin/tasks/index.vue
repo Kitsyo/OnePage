@@ -23,15 +23,15 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr v-for="task in tasks">
-                                <td class="text-center">id</td>
+                            <tr v-for="(task,index) in tasks">
+                                <td class="text-center">{{ task.id }}</td>
                                 <td>{{task.name}}</td>                                
                                 <td>{{task.description}}</td>
                                 <td>{{task.date_open}}</td>
                                 <th>{{task.date_close}}</th>
                                 <td class="text-center">
                                     <a class="btn btn-warning mr-1">Edit</a>
-                                    <button class="btn btn-danger">Delete</button>
+                                    <button class="btn btn-danger" @click="deleteTask(task.id, index)">Delete</button>
                                 </td>                               
                             </tr>
                         </tbody>
@@ -55,6 +55,15 @@ const tasks = ref();
             console.log(response.data);
         })  
     });
+
+    const deleteTask = (id,index) => {
+        axios.delete('/api/tasks/'+id)
+        .then(response => {
+            tasks.value.splice(index,1);
+        }).catch(error =>{
+            console.log(error)
+        })
+    }
 
 </script>
 
