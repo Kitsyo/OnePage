@@ -14,12 +14,12 @@ class TaskController extends Controller
         return $tasks;
     }
     public function store(Request $request){ // con esta funcion podemos insertar datos en la bbdd
-        
+
         $request->validate([
             'name' => 'required|max:5',
             'description' => 'required'
         ]);
-        
+
         $task = $request->all();
         $tarea = Task::create($task);
 
