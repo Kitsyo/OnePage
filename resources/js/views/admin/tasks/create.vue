@@ -49,23 +49,23 @@
 </template>
     
 <script setup>
-    import axios from "axios";
+import axios from "axios";
 import { ref, onMounted } from "vue";
     const task=ref({});
 
     const strError=ref();
     
-    const strSucces=ref();
+    const strSuccess=ref();
 
     function addTask(){
     axios.post('/api/tasks', task.value)
     .then(response => {
-       console.log(response);
-       strSucces.value = response.data.success;
-       strError.value="";
+    //    console.log(response);
+       strSuccess.value = "";
+       strSuccess.value = response.data.success;
     }).catch(error =>{
-       console.log(error);
-       strSucces.value = "";
+    //    console.log(error);
+       strError.value="";
        strError.value = error.response.data.message;
     });
 }

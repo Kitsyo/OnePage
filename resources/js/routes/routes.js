@@ -13,6 +13,8 @@ const ExercisesEdit  = ()  => import('../views/admin/exercises/Edit.vue');
 
 const TasksList  = ()  => import('../views/admin/tasks/Index.vue');
 const TasksCreate  = ()  => import('../views/admin/tasks/create.vue');
+const TasksUpdate  = ()  => import('../views/admin/tasks/update.vue');
+
 
 
 function requireLogin(to, from, next) {
@@ -145,6 +147,12 @@ export default [
                         path: 'create',
                         component: TasksCreate,
                         meta: { breadCrumb: 'Crear tareas' }
+                    },{
+                        name: 'tasks.update',
+                        path: 'update/:id',
+                        component: TasksUpdate,
+                        meta: { breadCrumb: 'Actualizar tareas',linked: false }, // Linked false es para deshabilitar la ruta de seguimiento en el encabezado
+                        
                     }
                 ]
             },

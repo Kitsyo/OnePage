@@ -6,10 +6,9 @@
                     <div class="d-flex justify-content-between pb-2 mb-2">
                         <h5 class="card-title">Todas las tareas</h5>
                         <div>
-                            <button class="btn btn-success" type="button">Nueva Tarea</button>
+                            <router-link :to="{name: 'tasks.create'}" class="btn btn-success" >Nueva Tarea</router-link>
                         </div>
                     </div>
-
 
                     <table class="table table-hover table-sm">
                         <thead class="bg-dark text-light">
@@ -30,7 +29,7 @@
                                 <td>{{task.date_open}}</td>
                                 <th>{{task.date_close}}</th>
                                 <td class="text-center">
-                                    <a class="btn btn-warning mr-1">Edit</a>
+                                    <router-link :to="{name: 'tasks.update', params: {id: task.id} }" class="btn btn-warning me-2">Edit</router-link>   
                                     <button class="btn btn-danger" @click="deleteTask(task.id, index)">Delete</button>
                                 </td>                               
                             </tr>
@@ -44,31 +43,37 @@
 
 
 <script setup>
-import {ref, onMounted} from "vue"
+import {ref, onMounted, inject} from "vue"
 const tasks = ref();
-
+const swal = inject('$swal');
     onMounted(()=>{
         // console.log('Mi vista esta montada');
         axios.get('/api/tasks')
         .then(response => {
             tasks.value = response.data;
-            console.log(response.data);
-        })  
+        })
     });
 
     const deleteTask = (id,index) => {
         axios.delete('/api/tasks/'+id)
         .then(response => {
             tasks.value.splice(index,1);
+            swal({
+                icon:'success',
+                title:'Tarea eliminada correctamente'
+            });
         }).catch(error =>{
             console.log(error)
-        })
+            swal({
+                icon:'Error',
+                title:'La tarea no se ha eliminada correctamente'
+            });
+            
+        });
     }
 
 </script>
 
-
 <style>
-
 
 </style>
