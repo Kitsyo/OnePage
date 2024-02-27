@@ -11,7 +11,6 @@ class Pedido extends Model
     protected $fillable = [
         "nombre",
         "idUsuario",
-        "fecha",
-        "estado"
+        "fecha"
     ];
 }

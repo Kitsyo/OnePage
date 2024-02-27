@@ -12,5 +12,6 @@ class Wikipedia extends Model
         'titulo',
         'contenido',
         'idUsuario',
+        'idCategoria'
     ];
 }

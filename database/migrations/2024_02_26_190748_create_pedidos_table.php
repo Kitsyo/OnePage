@@ -16,7 +16,6 @@ return new class extends Migration
             $table->unsignedBigInteger("idUsuario")->unsigned();
             $table->foreign("idUsuario")->references("id")->on("users")->onDelete('cascade');
             $table->dateTime("fecha");
-            $table->boolean("estado");
             $table->timestamps();
         });
     }
