@@ -15,6 +15,8 @@ const TasksList  = ()  => import('../views/admin/tasks/Index.vue');
 const TasksCreate  = ()  => import('../views/admin/tasks/create.vue');
 const TasksUpdate  = ()  => import('../views/admin/tasks/update.vue');
 
+const Productos  = ()  => import('../views/admin/tienda/Index.vue');
+
 
 
 function requireLogin(to, from, next) {
@@ -130,6 +132,19 @@ export default [
                 path: 'posts/edit/:id',
                 component: PostsEdit,
                 meta: { breadCrumb: 'Edit post' }
+            },
+            {
+                name: 'producto',
+                path: 'producto',
+                meta: { breadCrumb: 'Tareas'},
+                children: [
+                    {
+                        name: 'producto.index',
+                        path: '',
+                        component: Productos,
+                        meta: { breadCrumb: 'Productos' }
+                    }
+                ]
             },
             {
                 name: 'tasks',
