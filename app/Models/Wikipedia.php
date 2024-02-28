@@ -11,7 +11,14 @@ class Wikipedia extends Model
     protected $fillable = [
         'titulo',
         'contenido',
-        'idUsuario',
-        'idCategoria'
+        'idUsuario'
     ];
+    public function Users()
+    {
+        return $this->belongsTo(User::class);
+    }
+    public function Categorias()
+    {
+        return $this->belongsToMany(Categoria::class,'wikipedias_categorias');
+    }
 }

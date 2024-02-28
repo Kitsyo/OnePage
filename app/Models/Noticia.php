@@ -9,9 +9,16 @@ class Noticia extends Model
 {
     use HasFactory;
     protected $fillable = [
-        "titulo",
+        "titular",
         "contenido",
-        "idUsuario",
-        "idCategoria"
+        "idUsuario"
     ];
+    public function Users()
+    {
+        return $this->belongsTo(User::class);
+    }
+    public function Categorias()
+    {
+        return $this->belongsToMany(Categoria::class,'noticias_categorias');
+    }
 }
