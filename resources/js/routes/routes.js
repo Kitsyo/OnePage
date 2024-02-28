@@ -136,7 +136,7 @@ export default [
             {
                 name: 'producto',
                 path: 'producto',
-                meta: { breadCrumb: 'Tareas'},
+                meta: { breadCrumb: 'Producto'},
                 children: [
                     {
                         name: 'producto.index',
