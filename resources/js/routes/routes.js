@@ -17,7 +17,7 @@ const TasksUpdate  = ()  => import('../views/admin/tasks/update.vue');
 
 const Productos  = ()  => import('../views/admin/tienda/Index.vue');
 
-
+const ProductosList = () => import('../views/admin/tienda/index.vue');
 
 function requireLogin(to, from, next) {
     let isLogin = false;
@@ -47,7 +47,7 @@ export default [
         // redirect: { name: 'login' },
         component: GuestLayout,
         children: [
-           
+
             {
                 path: '/',
                 name: 'home',
@@ -167,7 +167,20 @@ export default [
                         path: 'update/:id',
                         component: TasksUpdate,
                         meta: { breadCrumb: 'Actualizar tareas',linked: false }, // Linked false es para deshabilitar la ruta de seguimiento en el encabezado
-                        
+
+                    }
+                ]
+            },
+            {
+                name: 'productos',
+                path: 'productos',
+                meta: { breadCrumb: 'Productos'},
+                children: [
+                    {
+                        name: 'productos.index',
+                        path: '',
+                        component: ProductosList,
+                        meta: { breadCrumb: 'Listado productos' }
                     }
                 ]
             },
@@ -200,7 +213,7 @@ export default [
                     }
                 ]
             },
-        
+
             {
                 name: 'categories',
                 path: 'categories',
@@ -216,9 +229,9 @@ export default [
                         name: 'categories.create',
                         path: 'create',
                         component: () => import('../views/admin/categories/Create.vue'),
-                        meta: { 
+                        meta: {
                             breadCrumb: 'Add new category' ,
-                            linked: false, 
+                            linked: false,
                         }
                     },
                     {
@@ -248,16 +261,16 @@ export default [
                         name: 'permissions.create',
                         path: 'create',
                         component: () => import('../views/admin/permissions/Create.vue'),
-                        meta: { 
+                        meta: {
                             breadCrumb: 'Create Permission',
-                            linked: false,  
+                            linked: false,
                         }
                     },
                     {
                         name: 'permissions.edit',
                         path: 'edit/:id',
                         component: () => import('../views/admin/permissions/Edit.vue'),
-                        meta: { 
+                        meta: {
                             breadCrumb: 'Permission Edit',
                             linked: false,
                         }

@@ -13,4 +13,8 @@ class Pedido extends Model
         "idUsuario",
         "fecha"
     ];
+    public function Pedidos()
+    {
+        return $this->belongsToMany(PedidoProducto::class);
+    }
 }

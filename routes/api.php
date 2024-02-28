@@ -22,7 +22,7 @@ Route::post('tasks/', [TaskController::class, 'store']);
 Route::put('tasks/update/{id}', [TaskController::class, 'update']);
 Route::delete('tasks/{id}', [TaskController::class, 'destroy']);
 Route::get('tasks/{id}', [TaskController::class, 'edit']);
-Route::get('productos', [ProductoController::class, 'index']); // Producto
+Route::get('tienda', [ProductoController::class, 'index']); // Producto
 
 
 

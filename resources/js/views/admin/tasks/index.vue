@@ -24,14 +24,14 @@
                         <tbody>
                             <tr v-for="(task,index) in tasks">
                                 <td class="text-center">{{ task.id }}</td>
-                                <td>{{task.name}}</td>                                
+                                <td>{{task.name}}</td>
                                 <td>{{task.description}}</td>
                                 <td>{{task.date_open}}</td>
                                 <th>{{task.date_close}}</th>
                                 <td class="text-center">
-                                    <router-link :to="{name: 'tasks.update', params: {id: task.id} }" class="btn btn-warning me-2">Edit</router-link>   
+                                    <router-link :to="{name: 'tasks.update', params: {id: task.id} }" class="btn btn-warning me-2">Edit</router-link>
                                     <button class="btn btn-danger" @click="deleteTask(task.id, index)">Delete</button>
-                                </td>                               
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -68,7 +68,7 @@ const swal = inject('$swal');
                 icon:'Error',
                 title:'La tarea no se ha eliminada correctamente'
             });
-            
+
         });
     }
 

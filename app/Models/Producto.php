@@ -14,4 +14,12 @@ class Producto extends Model
         "precio",
         "idCategoria"
     ];
+    public function Categorias()
+    {
+        return $this->belongsTo(Categoria::class);
+    }
+    public function Pedidos()
+    {
+        return $this->belongsToMany(PedidoProducto::class);
+    }
 }
