@@ -11,10 +11,11 @@ class Pedido extends Model
     protected $fillable = [
         "nombre",
         "idUsuario",
-        "fecha"
+        "fecha",
+        "idProducto"
     ];
-    public function Pedidos()
+    public function productos()
     {
-        return $this->belongsToMany(PedidoProducto::class);
+        return $this->belongsToMany(Producto::class,'pedido_productos');
     }
 }

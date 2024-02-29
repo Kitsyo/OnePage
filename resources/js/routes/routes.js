@@ -19,6 +19,7 @@ const Productos  = ()  => import('../views/admin/tienda/Index.vue');
 
 const ProductosList = () => import('../views/admin/tienda/index.vue');
 
+
 function requireLogin(to, from, next) {
     let isLogin = false;
     isLogin = !!store.state.auth.authenticated;
@@ -181,6 +182,19 @@ export default [
                         path: '',
                         component: ProductosList,
                         meta: { breadCrumb: 'Listado productos' }
+                    }
+                ]
+            },
+            {
+                name: 'pedidos',
+                path: 'pedidos',
+                meta: { breadCrumb: 'Pedidos'},
+                children: [
+                    {
+                        name: 'pedidos.index',
+                        path: '',
+                        component: PedidosList,
+                        meta: { breadCrumb: 'Listado pedidos' }
                     }
                 ]
             },

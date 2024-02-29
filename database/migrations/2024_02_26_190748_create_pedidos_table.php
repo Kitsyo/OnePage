@@ -14,8 +14,10 @@ return new class extends Migration
         Schema::create('pedidos', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger("idUsuario")->unsigned();
-            $table->foreign("idUsuario")->references("id")->on("users")->onDelete('cascade');
+            //$table->foreign("idUsuario")->references("id")->on("users")->onDelete('cascade');
             $table->dateTime("fecha");
+            $table->unsignedBigInteger('idProducto');
+            $table->foreign('idProducto')->references('id')->on('productos')->onDelete('cascade');
             $table->timestamps();
         });
     }
