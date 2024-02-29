@@ -9,6 +9,7 @@ use App\Http\Controllers\Api\RoleController;
 use App\Http\Controllers\api\TaskController; // Task controller import
 use App\Http\Controllers\api\WikipediaController; // Task controller import
 use App\Http\Controllers\api\ProductoController; // Producto controller import
+use App\Http\Controllers\api\PedidoController; //Pedido controller import
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use Illuminate\Http\Request;
@@ -23,13 +24,22 @@ Route::post('tasks/', [TaskController::class, 'store']);
 Route::put('tasks/update/{id}', [TaskController::class, 'update']);
 Route::delete('tasks/{id}', [TaskController::class, 'destroy']);
 Route::get('tasks/{id}', [TaskController::class, 'edit']);
-Route::get('tienda', [ProductoController::class, 'index']); // Producto
 
+// wiki
 Route::get('wiki', [WikipediaController::class, 'index']);
 Route::post('wiki/', [WikipediaController::class, 'store']);
 Route::put('wiki/update/{id}', [WikipediaController::class, 'update']);
 Route::delete('wiki/{id}', [WikipediaController::class, 'destroy']);
 Route::get('wiki/{id}', [WikipediaController::class, 'edit']);
+
+// PEDIDOS
+Route::get('tienda', [ProductoController::class, 'index']); // Producto
+Route::post('tienda/', [ProductoController::class, 'store']); // Producto insertar
+Route::delete('tienda/{id}', [ProductoController::class, 'destroy']); // Producto eliminar
+Route::put('tienda/update/{id}', [ProductoController::class, 'update']);
+
+//PRODUCTOS
+Route::get('pedidos', [PedidoController::class, 'index']);
 
 
 Route::group(['middleware' => 'auth:sanctum'], function() {

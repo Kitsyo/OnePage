@@ -8,18 +8,21 @@ use Illuminate\Database\Eloquent\Model;
 class Producto extends Model
 {
     use HasFactory;
+
     protected $fillable = [
         "nombre",
         "descripcion",
         "precio",
         "idCategoria"
     ];
-    public function Categorias()
+
+    public function pedidos()
+    {
+        return $this->belongsToMany(Pedido::class, 'pedido_productos');
+    }
+
+    public function categorias()
     {
         return $this->belongsTo(Categoria::class);
-    }
-    public function Pedidos()
-    {
-        return $this->belongsToMany(PedidoProducto::class);
     }
 }
