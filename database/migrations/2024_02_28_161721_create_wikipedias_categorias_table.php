@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('wikipedias_categorias', function (Blueprint $table) {            
-            $table->unsignedBigInteger("idWikipedia")->unsigned();
-            $table->unsignedBigInteger("idCategoria")->unsigned();            
-            $table->foreign("idWikipedia")->references("id")->on("wikipedias")->onDelete('cascade');
-            $table->foreign("idCategoria")->references("id")->on("categorias")->onDelete('cascade');
+        Schema::create('wikipedias_categorias', function (Blueprint $table) {
+            $table->unsignedBigInteger("wikipedia_id")->unsigned();
+            $table->unsignedBigInteger("categoria_id")->unsigned();
+            $table->foreign("wikipedia_id")->references("id")->on("wikipedias")->onDelete('cascade');
+            $table->foreign("categoria_id")->references("id")->on("categorias")->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -25,14 +25,15 @@ Route::delete('tasks/{id}', [TaskController::class, 'destroy']);
 Route::get('tasks/{id}', [TaskController::class, 'edit']);
 
 
-// PEDIDOS
-Route::get('tienda', [ProductoController::class, 'index']); // Producto
-Route::post('tienda/', [ProductoController::class, 'store']); // Producto insertar
-Route::delete('tienda/{id}', [ProductoController::class, 'destroy']); // Producto eliminar
-Route::put('tienda/update/{id}', [ProductoController::class, 'update']);
+// PRODUCTOS
+Route::get('tienda', [ProductoController::class, 'index']); // Producto -> listar
+Route::post('tienda/', [ProductoController::class, 'store']); // Producto -> insertar
+Route::delete('tienda/{id}', [ProductoController::class, 'destroy']); // Producto -> eliminar
+Route::put('tienda/update/{id}', [ProductoController::class, 'update']); // Producto -> Actualizar
 
-//PRODUCTOS
-Route::get('pedidos', [PedidoController::class, 'index']);
+//PEDIDOS
+Route::get('pedidos', [PedidoController::class, 'index']); //Pedido -> listar
+Route::post('pedidos/', [PedidoController::class, 'store']); // Pedido -> insertar
 
 
 

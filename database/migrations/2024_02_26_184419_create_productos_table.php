@@ -16,8 +16,9 @@ return new class extends Migration
             $table->string("nombre");
             $table->string("descripcion");
             $table->integer("precio");
-            $table->unsignedBigInteger("idCategoria")->unsigned();
-            $table->foreign("idCategoria")->references("id")->on("categorias")->onDelete('cascade');
+            $table->unsignedBigInteger("categoria_id")->unsigned();
+            $table->unsignedBigInteger('pedido_id')->unsigned();
+            $table->foreign("categoria_id")->references("id")->on("categorias")->onDelete('cascade');
             $table->timestamps();
         });
     }
