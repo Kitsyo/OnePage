@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('noticias', function (Blueprint $table) {
             $table->id();
+            $table->string("titular");
             $table->longText("contenido");
             $table->unsignedBigInteger("idUsuario")->unsigned();
             $table->foreign("idUsuario")->references("id")->on("users")->onDelete('cascade');
