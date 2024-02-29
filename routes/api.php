@@ -8,6 +8,7 @@ use App\Http\Controllers\Api\ProfileController;
 use App\Http\Controllers\Api\RoleController;
 use App\Http\Controllers\api\TaskController; // Task controller import
 use App\Http\Controllers\api\WikipediaController; // Task controller import
+use App\Http\Controllers\api\NoticiaController; // Noticia controller import
 use App\Http\Controllers\api\ProductoController; // Producto controller import
 use App\Http\Controllers\api\PedidoController; //Pedido controller import
 use App\Http\Controllers\Api\UserController;
@@ -25,12 +26,19 @@ Route::put('tasks/update/{id}', [TaskController::class, 'update']);
 Route::delete('tasks/{id}', [TaskController::class, 'destroy']);
 Route::get('tasks/{id}', [TaskController::class, 'edit']);
 
-// wiki
+// WIKI
 Route::get('wiki', [WikipediaController::class, 'index']);
 Route::post('wiki/', [WikipediaController::class, 'store']);
 Route::put('wiki/update/{id}', [WikipediaController::class, 'update']);
 Route::delete('wiki/{id}', [WikipediaController::class, 'destroy']);
 Route::get('wiki/{id}', [WikipediaController::class, 'edit']);
+
+// NOTICIAS
+Route::get('noticias', [NoticiaController::class, 'index']);
+Route::post('noticias/', [NoticiaController::class, 'store']);
+Route::put('noticias/update/{id}', [NoticiaController::class, 'update']);
+Route::delete('noticias/{id}', [NoticiaController::class, 'destroy']);
+Route::get('noticias/{id}', [NoticiaController::class, 'edit']);
 
 // PEDIDOS
 Route::get('tienda', [ProductoController::class, 'index']); // Producto

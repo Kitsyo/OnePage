@@ -9,9 +9,9 @@ use App\Models\Wikipedia; //hace fata el use del modelo de tareas
 class WikipediaController extends Controller
 {
     public function index(){
-        // return "Hola";
-        $wiki = Wikipedia::all('categorias')->get(); //con esta funcion podemos guardar todas las tareas de la base de datos en un array
-        return $wiki;
+        $pedidos = Wikipedia::with('categorias')->get(); //con esta funcion podemos guardar todas las tareas de la base de datos en un array
+
+        return $pedidos;
     }
     public function store(Request $request){ // con esta funcion podemos insertar datos en la bbdd
 
@@ -30,8 +30,8 @@ class WikipediaController extends Controller
 
         $task = Wikipedia::find($id);
         $request->validate([
-            'name' => 'required|max:5',
-            'description' => 'required'
+            'titulo' => 'required',
+            'contenido' => 'required'
         ]);
 
         $dateToUpdate = $request->all();

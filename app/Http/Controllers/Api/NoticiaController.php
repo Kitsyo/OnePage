@@ -9,15 +9,14 @@ use App\Models\Noticia; //hace fata el use del modelo de tareas
 class NoticiaController extends Controller
 {
     public function index(){
-        // return "Hola";
-        $tasks = Noticia::all()->toArray(); //con esta funcion podemos guardar todas las tareas de la base de datos en un array
-        return $tasks;
+        $pedidos = Noticia::with('categorias')->get(); //con esta funcion podemos guardar todas las tareas de la base de datos en un array
+        return $pedidos;
     }
     public function store(Request $request){ // con esta funcion podemos insertar datos en la bbdd
 
         $request->validate([
-            'name' => 'required|max:5',
-            'description' => 'required'
+            'titular' => 'required',
+            'contenido' => 'required'
         ]);
 
         $task = $request->all();
@@ -30,8 +29,8 @@ class NoticiaController extends Controller
 
         $task = Noticia::find($id);
         $request->validate([
-            'name' => 'required|max:5',
-            'description' => 'required'
+            'titular' => 'required',
+            'contenido' => 'required'
         ]);
 
         $dateToUpdate = $request->all();
