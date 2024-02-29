@@ -13,11 +13,11 @@ class Wikipedia extends Model
         'contenido',
         'idUsuario'
     ];
-    public function Users()
+    public function users()
     {
         return $this->belongsTo(User::class);
     }
-    public function Categorias()
+    public function categorias()
     {
         return $this->belongsToMany(Categoria::class,'wikipedias_categorias');
     }

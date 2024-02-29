@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\ExerciseController;
 use App\Http\Controllers\Api\ProfileController;
 use App\Http\Controllers\Api\RoleController;
 use App\Http\Controllers\api\TaskController; // Task controller import
+use App\Http\Controllers\api\WikipediaController; // Task controller import
 use App\Http\Controllers\api\ProductoController; // Producto controller import
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Auth\ResetPasswordController;
@@ -24,7 +25,11 @@ Route::delete('tasks/{id}', [TaskController::class, 'destroy']);
 Route::get('tasks/{id}', [TaskController::class, 'edit']);
 Route::get('tienda', [ProductoController::class, 'index']); // Producto
 
-
+Route::get('wiki', [WikipediaController::class, 'index']);
+Route::post('wiki/', [WikipediaController::class, 'store']);
+Route::put('wiki/update/{id}', [WikipediaController::class, 'update']);
+Route::delete('wiki/{id}', [WikipediaController::class, 'destroy']);
+Route::get('wiki/{id}', [WikipediaController::class, 'edit']);
 
 
 Route::group(['middleware' => 'auth:sanctum'], function() {
