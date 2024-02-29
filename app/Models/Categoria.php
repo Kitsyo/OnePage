@@ -11,4 +11,14 @@ class Categoria extends Model
     protected $fillable = [
         "nombre",
     ];
+
+    public function wikipedias()
+    {
+        return $this->belongsToMany(Wikipedia::class,'wikipedias_categorias');
+    }
+
+    public function noticias()
+    {
+        return $this->belongsToMany(Noticia::class,'noticias_categorias');
+    }
 }

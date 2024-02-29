@@ -11,9 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('wikipedias_categorias', function (Blueprint $table) {
+        Schema::create('wikipedias_categorias', function (Blueprint $table) {  
+            $table->id();          
             $table->unsignedBigInteger("wikipedia_id")->unsigned();
-            $table->unsignedBigInteger("categoria_id")->unsigned();
+            $table->unsignedBigInteger("categoria_id")->unsigned();            
             $table->foreign("wikipedia_id")->references("id")->on("wikipedias")->onDelete('cascade');
             $table->foreign("categoria_id")->references("id")->on("categorias")->onDelete('cascade');
             $table->timestamps();
