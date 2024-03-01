@@ -13,10 +13,11 @@ return new class extends Migration
     {
         Schema::create('pedido_productos', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger("idPedido")->unsigned();
-            $table->unsignedBigInteger("idProducto")->unsigned();
-            $table->foreign('idPedido')->references('id')->on('pedidos')->onDelete('cascade');
-            $table->foreign('idProducto')->references('id')->on('productos')->onDelete('cascade');
+            $table->unsignedBigInteger("pedido_id")->unsigned();
+            $table->unsignedBigInteger("producto_id")->unsigned();
+            $table->foreign('pedido_id')->references('id')->on('pedidos')->onDelete('cascade');
+            $table->foreign('producto_id')->references('id')->on('productos')->onDelete('cascade');
+            $table->integer('cantidad');
             $table->timestamps();
         });
     }

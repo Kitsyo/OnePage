@@ -11,7 +11,7 @@ class ProductoController extends Controller
 {
     public function index(){
         // return "Hola";
-        $productos = Producto::all(); //con esta funcion podemos guardar todas las tareas de la base de datos en un array
+        $productos = Producto::with('pedidos')->get(); //con esta funcion podemos guardar todas las tareas de la base de datos en un array
 
         return $productos;
     }
@@ -21,7 +21,8 @@ class ProductoController extends Controller
         $request->validate([
            'nombre' => 'required',
             'descripcion' => 'required',
-            'precio' => 'required'
+            'precio' => 'required',
+            'idCategoria' => 'required'
         ]);
         $producto = $request->all();
         $tarea = Producto::create($producto);
@@ -43,9 +44,9 @@ class ProductoController extends Controller
         $producto = Producto::find($id);
         $request->validate([
             'nombre' => 'required',
-            'description' => 'required',
-            'precio' => 'required'
-
+            'descripcion' => 'required',
+            'precio' => 'required',
+            'idCategoria' => 'required'
         ]);
 
         $dateToUpdate = $request->all();
