@@ -41,15 +41,18 @@ Route::delete('noticias/{id}', [NoticiaController::class, 'destroy']);
 Route::get('noticias/{id}', [NoticiaController::class, 'edit']);
 
 // PRODUCTOS
-Route::get('tienda', [ProductoController::class, 'index']); // Producto -> listar
-Route::post('tienda/', [ProductoController::class, 'store']); // Producto -> insertar
-Route::delete('tienda/{id}', [ProductoController::class, 'destroy']); // Producto -> eliminar
-Route::put('tienda/update/{id}', [ProductoController::class, 'update']); // Producto -> Actualizar
+Route::get('productos', [ProductoController::class, 'index']); // Producto
+Route::post('productos/', [ProductoController::class, 'store']); // Producto insertar
+Route::delete('productos/{id}', [ProductoController::class, 'destroy']); // Producto eliminar
+Route::put('productos/update/{id}', [ProductoController::class, 'update']);
+Route::get('productos/{id}', [ProductoController::class, 'edit']);
 
-//PEDIDOS
-Route::get('pedidos', [PedidoController::class, 'index']); //Pedido -> listar
-Route::post('pedidos/', [PedidoController::class, 'store']); // Pedido -> insertar
-
+//  PEDIDOS
+Route::get('pedidos', [PedidoController::class, 'index']);
+Route::post('pedidos/', [PedidoController::class, 'store']);
+Route::put('pedidos/update/{id}', [PedidoController::class, 'update']);
+Route::delete('pedidos/{id}', [PedidoController::class, 'destroy']);
+Route::get('pedidos/{id}', [PedidoController::class, 'edit']);
 
 Route::group(['middleware' => 'auth:sanctum'], function() {
     Route::apiResource('users', UserController::class);

@@ -19,13 +19,43 @@ class PedidoController extends Controller
     {
 
         $request->validate([
-            'usuario_id' => 'required',
-            'fecha' => 'required',
-            'producto_id' => 'required'
+            'idUsuario' => 'required',
+            'precioFinal' => 'required'
         ]);
-        $pedido = $request->all();
-        $tarea = Producto::create($pedido);
+        $producto = $request->all();
+        $tarea = Pedido::create($producto);
 
-        return response()->json(['success' => true, 'data' => $pedido]);
+        return response()->json(['success' => true, 'data' => $producto]);
+    }
+    public function destroy($id, Request $request)
+    {
+
+        $producto = Pedido::find($id);
+        $producto->delete();
+
+        return response()->json(['succes' => true, 'data' => "Deleted"]);
+
+    }
+    public function update($id, Request $request)
+    {
+
+        $producto = Pedido::find($id);
+        $request->validate([
+            'idUsuario' => 'required',
+            'precioFinal' => 'required'
+        ]);
+
+        $dateToUpdate = $request->all();
+        $producto->update($dateToUpdate);
+
+        return response()->json(['success' => true, 'data'=> $producto]);
+    }
+    public function edit($id)
+    {
+        $producto = Pedido::find($id);
+
+        return response()->json(['success' => true, 'data' => $producto]);
     }
 }
+
+
