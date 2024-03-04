@@ -186,19 +186,6 @@ export default [
                 ]
             },
             {
-                name: 'pedidos',
-                path: 'pedidos',
-                meta: { breadCrumb: 'Pedidos'},
-                children: [
-                    {
-                        name: 'pedidos.index',
-                        path: '',
-                        component: PedidosList,
-                        meta: { breadCrumb: 'Listado pedidos' }
-                    }
-                ]
-            },
-            {
                 name: 'exercises',
                 path: 'exercises',
                 meta: { breadCrumb: 'Exercises'},
