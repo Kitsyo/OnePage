@@ -1,0 +1,25 @@
+[33md66ed26[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m HEAD@{0}: commit (merge): Merge remote-tracking branch 'origin/main'
+[33m2af64e0[m HEAD@{1}: commit (merge): Merge remote-tracking branch 'origin/main'
+[33m27a0400[m HEAD@{2}: commit: Prueba de push
+[33m7e45fe6[m HEAD@{3}: merge origin/main: Merge made by the 'ort' strategy.
+[33m7e377b4[m HEAD@{4}: commit: Prueba de push
+[33maef59cd[m HEAD@{5}: commit: Prueba de push
+[33mb467ecf[m HEAD@{6}: commit (amend): Relaciones en modelos hechos y seeder de categorias hecho i funcionando
+[33m8a690c7[m HEAD@{7}: commit: Relaciones en modelos hechos y seeder de categorias hecho i funcionando
+[33m0803811[m HEAD@{8}: commit: Relaciones en modelos hechos y seeder de categorias hecho i funcionando
+[33mfb4fa93[m HEAD@{9}: rebase (finish): returning to refs/heads/main
+[33mfb4fa93[m HEAD@{10}: rebase (start): checkout origin/main
+[33m5b093b6[m HEAD@{11}: merge origin/main: Merge made by the 'ort' strategy.
+[33m6b5fb3d[m HEAD@{12}: commit: Añadidas tablas de productos, pedidos, wiki, noticias i controllador producto.
+[33m9d0c93f[m HEAD@{13}: commit: Añadidas tablas de productos, pedidos, wiki, noticias i controllador producto.
+[33m7c2aee2[m HEAD@{14}: commit: Añadidas tablas de productos, pedidos, wiki, noticias i controllador producto.
+[33m1c6d537[m HEAD@{15}: commit (amend): Actualizado al dia
+[33m9af4fef[m HEAD@{16}: commit: Actualizado al dia
+[33m15a4b71[m HEAD@{17}: commit (amend): Actualizado al dia
+[33m120f451[m HEAD@{18}: commit: Actualizado al dia
+[33m7a579e0[m HEAD@{19}: Branch: renamed refs/heads/master to refs/heads/main
+[33m7a579e0[m HEAD@{21}: commit: delete hecho
+[33mdee899d[m HEAD@{22}: commit: vue
+[33m045601e[m HEAD@{23}: commit: Expliacion i api de laravel hecha
+[33m91575d0[m HEAD@{24}: commit: cambios api
+[33ma75c421[m HEAD@{25}: clone: from https://gitfront.io/r/Deivi7/E1fMRV7bjAXY/TemplateDaw2.git

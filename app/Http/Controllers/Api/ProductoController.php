@@ -10,8 +10,7 @@ use Illuminate\Http\Request;
 class ProductoController extends Controller
 {
     public function index(){
-        // return "Hola";
-        $productos = Producto::with('pedidos')->get(); //con esta funcion podemos guardar todas las tareas de la base de datos en un array
+        $productos = Producto::all(); //con esta funcion podemos guardar todas las tareas de la base de datos en un array
 
         return $productos;
     }
