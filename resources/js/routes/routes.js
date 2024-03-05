@@ -21,9 +21,6 @@ const wikipediasUpdate  = ()  => import('../views/admin/wikipedias/update.vue');
 
 const Productos  = ()  => import('../views/admin/tienda/Index.vue');
 
-const ProductosList = () => import('../views/admin/tienda/index.vue');
-
-
 function requireLogin(to, from, next) {
     let isLogin = false;
     isLogin = !!store.state.auth.authenticated;
@@ -177,6 +174,7 @@ export default [
                 ]
             },
             {
+
                 name: 'wikipedias',
                 path: 'wikipedias',
                 meta: { breadCrumb: 'Wikipedia'},
@@ -198,19 +196,6 @@ export default [
                         component: wikipediasUpdate,
                         meta: { breadCrumb: 'Actualizar Wikipedia',linked: false }, // Linked false es para deshabilitar la ruta de seguimiento en el encabezado
 
-                    }
-                ]
-            },
-            {
-                name: 'productos',
-                path: 'productos',
-                meta: { breadCrumb: 'Productos'},
-                children: [
-                    {
-                        name: 'productos.index',
-                        path: '',
-                        component: ProductosList,
-                        meta: { breadCrumb: 'Listado productos' }
                     }
                 ]
             },
