@@ -15,6 +15,10 @@ const TasksList  = ()  => import('../views/admin/tasks/Index.vue');
 const TasksCreate  = ()  => import('../views/admin/tasks/create.vue');
 const TasksUpdate  = ()  => import('../views/admin/tasks/update.vue');
 
+const wikipediasList  = ()  => import('../views/admin/wikipedias/Index.vue');
+const wikipediasCreate  = ()  => import('../views/admin/wikipedias/create.vue');
+const wikipediasUpdate  = ()  => import('../views/admin/wikipedias/update.vue');
+
 const Productos  = ()  => import('../views/admin/tienda/Index.vue');
 
 const ProductosList = () => import('../views/admin/tienda/index.vue');
@@ -168,6 +172,31 @@ export default [
                         path: 'update/:id',
                         component: TasksUpdate,
                         meta: { breadCrumb: 'Actualizar tareas',linked: false }, // Linked false es para deshabilitar la ruta de seguimiento en el encabezado
+
+                    }
+                ]
+            },
+            {
+                name: 'wikipedias',
+                path: 'wikipedias',
+                meta: { breadCrumb: 'Wikipedia'},
+                children: [
+                    {
+                        name: 'wikipedias.index',
+                        path: '',
+                        component: wikipediasList,
+                        meta: { breadCrumb: 'Listado Wikipedia' }
+                    },
+                    {
+                        name: 'wikipedias.create',
+                        path: 'create',
+                        component: wikipediasCreate,
+                        meta: { breadCrumb: 'Crear Wikipedia' }
+                    },{
+                        name: 'wikipedias.update',
+                        path: 'update/:id',
+                        component: wikipediasUpdate,
+                        meta: { breadCrumb: 'Actualizar Wikipedia',linked: false }, // Linked false es para deshabilitar la ruta de seguimiento en el encabezado
 
                     }
                 ]
