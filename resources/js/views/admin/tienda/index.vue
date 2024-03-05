@@ -22,10 +22,10 @@
                         <tbody>
                         <tr>
                             <td class="text-center">s</td>
-                            <td>a</td>
-                            <td>a</td>
-                            <td>a</td>
-                            <th>a</th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <th></th>
                             <td class="text-center"></td>
                         </tr>
                         </tbody>

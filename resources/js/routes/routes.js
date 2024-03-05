@@ -14,11 +14,7 @@ const ExercisesEdit  = ()  => import('../views/admin/exercises/Edit.vue');
 const TasksList  = ()  => import('../views/admin/tasks/Index.vue');
 const TasksCreate  = ()  => import('../views/admin/tasks/create.vue');
 const TasksUpdate  = ()  => import('../views/admin/tasks/update.vue');
-
 const Productos  = ()  => import('../views/admin/tienda/Index.vue');
-
-const ProductosList = () => import('../views/admin/tienda/index.vue');
-
 
 function requireLogin(to, from, next) {
     let isLogin = false;
@@ -169,19 +165,6 @@ export default [
                         component: TasksUpdate,
                         meta: { breadCrumb: 'Actualizar tareas',linked: false }, // Linked false es para deshabilitar la ruta de seguimiento en el encabezado
 
-                    }
-                ]
-            },
-            {
-                name: 'productos',
-                path: 'productos',
-                meta: { breadCrumb: 'Productos'},
-                children: [
-                    {
-                        name: 'productos.index',
-                        path: '',
-                        component: ProductosList,
-                        meta: { breadCrumb: 'Listado productos' }
                     }
                 ]
             },
