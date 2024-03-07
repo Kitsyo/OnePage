@@ -4,28 +4,48 @@
             <div class="col-12 xl:col-12">
                 <div class="card">
                     <div class="card-header text-center">
-                        <h5>Banner Principal *Aqui cotenido tienda*</h5>
+                        <h3>Banner Principal *Aqui cotenido tienda*</h3>
                     </div>
-                    <div class="card-body text-center">
-                        <img src="/images/placeholder.jpg" alt="Imagen de prueba para el banner" />
+
+                    <div id="carouselExample" class="carousel slide">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="/images/prueba_banner2.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/images/prueba_banner3.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/images/prueba_banner5.jpg" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
                     </div>
+
                 </div>
             </div>
         </div>
 
         <div class="col-12 xl:col-12">
             <div class="card mt-5 text-center">
-                <h4>Ultimas Noticias</h4>
+                <h3>Ultimas Noticias</h3>
             </div>
         </div>
         <!-- Inicio modulo noticia -->
         <div class="col-12 xl:col-6">
             <div class="card text-center">
                 <div class="card-header color-fondo-blanco">
-                    <h5>Titulo Noticia</h5>
+                    <h4>Titulo Noticia</h4>
                 </div>
                 <div class="card-body">
-                    <h6 class="card-title">Publicante (nombre)</h6>
+                    <h5 class="card-title">Publicante (nombre)</h5>
                     <p class="card-text">Contenido de la noticia, un resumen de las 5 o 6 primeras lineas</p>
                     <a href="#" class="btn btn-primary">Noticia Completa</a>
                 </div>
@@ -39,10 +59,10 @@
         <div class="col-12 xl:col-6">
             <div class="card text-center">
                 <div class="card-header color-fondo-blanco">
-                    <h5>Titulo Noticia</h5>
+                    <h4>Titulo Noticia</h4>
                 </div>
                 <div class="card-body">
-                    <h6 class="card-title">Publicante (nombre)</h6>
+                    <h5 class="card-title">Publicante (nombre)</h5>
                     <p class="card-text">Contenido de la noticia, un resumen de las 5 o 6 primeras lineas</p>
                     <a href="#" class="btn btn-primary">Noticia Completa</a>
                 </div>
@@ -55,19 +75,19 @@
         <div class="col-12 xl:col-12">
             <div class="mt-5 card text-center">
                 <i></i>
-                <h4>Multimedia</h4>
+                <h3>Multimedia</h3>
             </div>
         </div>
         <div class="col-6 xl:col-6">
             <div class="card">
-                <h5 class="text-center">Manga</h5>
+                <h4 class="text-center">Manga</h4>
                 <div class="accordion" id="accordionOne">
                     <div class="accordion-item">
-                        <h2 class="accordion-header">
+                        <h5 class="accordion-header">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                 <b>"categoria1"</b>
                             </button>
-                        </h2>
+                        </h5>
                         <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionOne">
                             <div class="accordion-body">
                                 <p>Tomo 1</p>
@@ -77,11 +97,11 @@
                         </div>
                     </div>
                     <div class="accordion-item">
-                        <h2 class="accordion-header">
+                        <h5 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                 <b>"categoria2"</b>
                             </button>
-                        </h2>
+                        </h5>
                         <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionOne">
                             <div class="accordion-body">
                                 <p>Tomo 1</p>
@@ -91,11 +111,11 @@
                         </div>
                     </div>
                     <div class="accordion-item">
-                        <h2 class="accordion-header">
+                        <h5 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                 <b>"categoria3"</b>
                             </button>
-                        </h2>
+                        </h5>
                         <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionOne">
                             <div class="accordion-body">
                                 <p>Tomo 1</p>
@@ -112,11 +132,11 @@
                 <h5 class="text-center">Videos</h5>
                 <div class="accordion" id="accordionTwo">
                     <div class="accordion-item">
-                        <h2 class="accordion-header">
+                        <h5 class="accordion-header">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseOne">
                                 <b>"categoria1"</b>
                             </button>
-                        </h2>
+                        </h5>
                         <div id="collapseFour" class="accordion-collapse collapse show" data-bs-parent="#accordionTwo">
                             <div class="accordion-body">
                                 <p>Cap. 1</p>
@@ -126,11 +146,11 @@
                         </div>
                     </div>
                     <div class="accordion-item">
-                        <h2 class="accordion-header">
+                        <h5 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseTwo">
                                 <b>"categoria2"</b>
                             </button>
-                        </h2>
+                        </h5>
                         <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionTwo">
                             <div class="accordion-body">
                                 <p>Cap. 1</p>
@@ -140,11 +160,11 @@
                         </div>
                     </div>
                     <div class="accordion-item">
-                        <h2 class="accordion-header">
+                        <h5 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseThree">
                                 <b>"categoria3"</b>
                             </button>
-                        </h2>
+                        </h5>
                         <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionTwo">
                             <div class="accordion-body">
                                 <p>Cap. 1</p>
@@ -158,8 +178,8 @@
         </div>
 
         <div class="col-12 xl:col-12">
-            <div class="card mt-5">
-
+            <div class="card text-center mt-5">
+                <h4>Wikipedia</h4>
             </div>
         </div>
     </div>

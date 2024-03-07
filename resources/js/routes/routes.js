@@ -103,7 +103,7 @@ export default [
         //     name: 'admin.index'
         // },
         beforeEnter: requireLogin,
-        meta: { breadCrumb: 'Dashboard' },
+        meta: { breadCrumb: 'Menu' },
         children: [
             {
                 name: 'admin.index',
