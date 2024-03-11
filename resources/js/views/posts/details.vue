@@ -23,12 +23,12 @@
 
             <div class="col-md-4">
                 <div class="position-sticky" style="top: 2rem;">
-                    <div class="p-4 mb-3 bg-light rounded">
+                    <!--<div class="p-4 mb-3 bg-light rounded">
                     <h4 class="fst-italic">Sobre</h4>
                     <p class="mb-0">Personaliza esta sección para dar más información sobre la publicación, escritores, contenido o algo completamente diferente. Depende totalmente de ti.</p>
-                    </div>
+                    </div>-->
 
-                    <div class="p-4">
+                    <div class="p-4 bg-light rounded">
                         <h4 class="fst-italic">Categorias</h4>
                         <ol v-if="categories?.length > 0" class="list-unstyled">
                             <li v-for="category in categories" :key="category.id">
