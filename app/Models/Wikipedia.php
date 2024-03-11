@@ -11,7 +11,7 @@ class Wikipedia extends Model
     protected $fillable = [
         'titulo',
         'contenido',
-        'idUsuario'
+        'usuario_id'
     ];
     public function users()
     {

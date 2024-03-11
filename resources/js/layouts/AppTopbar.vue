@@ -2,7 +2,7 @@
     <div class="layout-topbar">
         <router-link to="/" class="layout-topbar-logo">
             <img src="/images/logo.svg" alt="logo" />
-            <span></span>
+            <span>jJj</span>
         </router-link>
 
         <button class="p-link layout-menu-button layout-topbar-button" @click="onMenuToggle()">

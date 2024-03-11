@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\CategoryController;
+use App\Http\Controllers\Api\CategoriaController;
 use App\Http\Controllers\Api\PermissionController;
 use App\Http\Controllers\Api\PostController;
 use App\Http\Controllers\Api\ExerciseController;
@@ -53,6 +54,9 @@ Route::post('pedidos/', [PedidoController::class, 'store']);
 Route::put('pedidos/update/{id}', [PedidoController::class, 'update']);
 Route::delete('pedidos/{id}', [PedidoController::class, 'destroy']);
 Route::get('pedidos/{id}', [PedidoController::class, 'edit']);
+
+//CATEGORIAS
+Route::get('categoria-list', [CategoriaController::class, 'getList']);
 
 Route::group(['middleware' => 'auth:sanctum'], function() {
     Route::apiResource('users', UserController::class);

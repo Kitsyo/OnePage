@@ -5,26 +5,32 @@ namespace App\Http\Controllers\api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Wikipedia; //hace fata el use del modelo de tareas
-
+use App\Models\Categoria;
 class WikipediaController extends Controller
 {
     public function index(){
-        $pedidos = Wikipedia::with('categorias')->get(); //con esta funcion podemos guardar todas las tareas de la base de datos en un array
+        $wikipedias = Wikipedia::with('categorias')->get(); //con esta funcion podemos guardar todas las tareas de la base de datos en un array
 
-        return $pedidos;
+        return $wikipedias;
     }
     public function store(Request $request){ // con esta funcion podemos insertar datos en la bbdd
 
-        $request->validate([
+        $validatedData = $request->validate([
             'titulo' => 'required',
-            'contenido' => 'required'
+            'contenido' => 'required',
+            'usuario_id' => 'required',
+            'categoria_id' => 'required'
         ]);
+        //$validatedData['usuario_id'] = auth()->id();
 
-        $task = $request->all();
-        $tarea = Wikipedia::create($task);
+        $wikipedia = Wikipedia::create($validatedData);
 
-        return response()->json(['success' => true, 'data'=> $tarea]);
+        $categoria_id = explode(",", $request->categoria_id);
+        $categoria = Categoria::findMany($categoria_id);
+        $wikipedia->categorias()->attach($categoria);
 
+        return response()->json(['success' => true, 'data'=> $wikipedia]);
+        
     }
     public function update($id, Request $request){
 
