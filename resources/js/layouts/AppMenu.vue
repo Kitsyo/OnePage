@@ -19,28 +19,31 @@ const vela = "pepe";
 
 const model = ref([
     {
-        label: 'Home',
-        items: [{ label: 'Dashboard', icon: 'pi pi-fw pi-home', to: '/admin', permision: 'all'}]
-    },
-    {
-        label: 'Usuarios',
+        label: 'Tienda',
         items: [
-            { label: 'Users', icon: 'pi pi-fw pi-id-card', to: '/admin/users', permision: 'user-list' },
-            { label: 'Roles', icon: 'pi pi-fw pi-check-square', to: '/admin/roles', permision:'role-list' },
-            { label: 'Permisos', icon: 'pi pi-fw pi-bookmark', to: '/admin/permissions', permision:'permission-list' }
+            //label: es el texto  icn: el icono que esta al lado    to: hacia donde va  permision: son los tipos de usuarios que pueden ver eso
+            { label: 'Productos', icon: 'pi pi-fw pi-shopping-bag', to: '/admin', permision: 'all'},
+            { label: 'Carrito', icon: 'pi pi-fw pi-shopping-cart', to: '/admin/tasks', permision: 'all'}
         ]
     },
     {
-        label: 'Ejercicios',
+        label: 'Wiki',
         items: [
-            { label: 'Ejercicios', icon: 'pi pi-fw pi-id-card', to: '/admin/exercises', permision: 'exercise-list' },
-            { label: 'Categorias', icon: 'pi pi-fw pi-id-card', to: '/admin/categories', permision: 'category-list' }
+            { label: 'Todas las entradas', icon: 'pi pi-fw pi-id-card', to: '/admin/users', permision: 'all' },
+            { label: 'Noticias', icon: 'pi pi-fw pi-check-square', to: '/admin/roles', permision:'all' }
         ]
     },
     {
-        label: 'Posts',
+        label: 'Multimedia',
         items: [
-            { label: 'Posts', icon: 'pi pi-fw pi-id-card', to: '/admin/posts', permision: 'post-list' }
+            { label: 'Series', icon: 'pi pi-fw pi-play', to: '/admin/categories', permision: 'all' },
+            { label: 'Mangas', icon: 'pi pi-fw pi-book', to: '/admin/categories', permision: 'all' }
+        ]
+    },
+    {
+        label: 'Blog',
+        items: [
+            { label: 'Entradas', icon: 'pi pi-fw pi-pencil', to: '/admin/posts', permision: 'all' }
         ]
     }
 ]);

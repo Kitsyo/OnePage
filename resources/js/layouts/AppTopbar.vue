@@ -1,14 +1,20 @@
 <template>
     <div class="layout-topbar">
-        <router-link to="/" class="layout-topbar-logo">
-            <img src="/images/logo.svg" alt="logo" />
-            <span>jJj</span>
-        </router-link>
-
         <button class="p-link layout-menu-button layout-topbar-button" @click="onMenuToggle()">
-            <i class="pi pi-bars"></i>
+            <i class="pi pi-list"></i>
         </button>
-
+        <router-link to="/" class="layout-topbar-logo d-flex justify-content-center ajustar">
+            <!--<img src="/images/logo.svg" alt="logo" /> -->
+            <span>Logo</span>
+        </router-link>
+        <nav class="layout-topbar-menu">
+            <div class="container-fluid">
+                <form class="d-flex" role="search">
+                    <input class="form-control s-bar me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+                    <button class="btn btn-outline-success" type="submit"><i class="pi pi-search"></i></button>
+                </form>
+            </div>
+        </nav>
         <button class="p-link layout-topbar-menu-button layout-topbar-button" @click="onTopBarMenuButton()">
             <i class="pi pi-ellipsis-v"></i>
         </button>
@@ -78,5 +84,12 @@ const topbarMenuClasses = computed(() => {
     border: 0;
     border-radius: 0%;
     padding: 1em;
+}
+.s-bar{
+    width:600px;
+}
+.ajustar{
+    width:100px;
+    margin-left:100px
 }
 </style>

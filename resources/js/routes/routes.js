@@ -53,7 +53,7 @@ export default [
             {
                 path: '/',
                 name: 'home',
-                component: () => import('../views/home/index.vue'),
+                component: () => import('../views/admin/index.vue'), //hemos cambiado esta ruta por la de home
             },
             {
                 path: 'posts',
@@ -103,12 +103,12 @@ export default [
         //     name: 'admin.index'
         // },
         beforeEnter: requireLogin,
-        meta: { breadCrumb: 'Dashboard' },
+        meta: { breadCrumb: 'Menu' },
         children: [
             {
                 name: 'admin.index',
                 path: '',
-                component: () => import('../views/admin/index.vue'),
+                component: () => import('../views/home/index.vue'), //hemos cambiado esta ruta por la de admin
                 meta: { breadCrumb: 'Admin' }
             },
             {
