@@ -20,7 +20,7 @@
                             <router-link :to="{ name : 'public-posts.index'}" class="nav-link">Tienda</router-link>
                         </li>
                         <li class="nav-item">
-                            <router-link :to="{ name : 'public-posts.index'}" class="nav-link">Wikipedia</router-link>
+                            <router-link :to="{ name : 'public-wikipedias.index'}" class="nav-link">Wikipedia</router-link>
                         </li>
                     <template v-if="!user?.name">
                         <li class="nav-item">

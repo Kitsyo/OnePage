@@ -6,8 +6,8 @@
                     <div class="d-flex justify-content-between pb-2 mb-2">
                         <h5 class="card-title">Todas las Wikipedias</h5>
                         <div>
-                            <router-link :to="{titulo: 'wikipedias.create'}" class="btn btn-success" >Nueva wikipedia</router-link>
-                        </div>
+                            <router-link :to="{name: 'wikipedias.create'}" class="btn btn-success" >Nueva wikipedia</router-link>
+                       </div>
                     </div>
 
                     <table class="table table-hover table-sm">

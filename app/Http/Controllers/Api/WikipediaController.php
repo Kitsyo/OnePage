@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Wikipedia; //hace fata el use del modelo de tareas
 use App\Models\Categoria;
+use App\Http\Resources\WikipediaResource;
+
 class WikipediaController extends Controller
 {
     public function index(){
@@ -59,5 +61,21 @@ class WikipediaController extends Controller
 
         return response()->json(['success' => true, 'data' => $task]);
     }
+    public function getCategoriaByWiki($id)
+    {
+        $posts = Wikipedia::whereRelation('categorias', 'categoria_id', '=', $id)->paginate();
 
+        return WikipediaResource::collection($posts);
+    }
+    public function getPosts()
+    {
+        $wikipedias = Wikipedia::with('categorias')->latest()->paginate();
+        return WikipediaResource::collection($wikipedias);
+
+    }
+
+    public function getWikipedia($id)
+    {
+        return Wikipedia::with('categorias', 'user')->findOrFail($id);
+    }
 }

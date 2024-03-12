@@ -15,7 +15,7 @@ const TasksList  = ()  => import('../views/admin/tasks/Index.vue');
 const TasksCreate  = ()  => import('../views/admin/tasks/create.vue');
 const TasksUpdate  = ()  => import('../views/admin/tasks/update.vue');
 
-const wikipediasList  = ()  => import('../views/admin/wikipedias/Index.vue');
+const wikipediasList  = ()  => import('../views/admin/wikipedias/index.vue');
 const wikipediasCreate  = ()  => import('../views/admin/wikipedias/create.vue');
 const wikipediasUpdate  = ()  => import('../views/admin/wikipedias/update.vue');
 
@@ -69,6 +69,21 @@ export default [
                 path: 'category/:id',
                 name: 'category-posts.index',
                 component: () => import('../views/category/posts.vue'),
+            },
+            {
+                path: 'wikipedia',
+                name: 'public-wikipedias.index',
+                component: () => import('../views/wikipedias/index.vue'),
+            },
+            {
+                path: 'wikipedia/:id',
+                name: 'public-wikipedias.details',
+                component: () => import('../views/wikipedias/details.vue'),
+            },
+            {
+                path: 'categoria/:id',
+                name: 'categoria-posts.index',
+                component: () => import('../views/categoria/posts.vue'),
             },
             {
                 path: 'login',

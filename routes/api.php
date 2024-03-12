@@ -58,6 +58,11 @@ Route::get('pedidos/{id}', [PedidoController::class, 'edit']);
 //CATEGORIAS
 Route::get('categoria-list', [CategoriaController::class, 'getList']);
 
+//CATEGORIAS_WIKI
+Route::get('get-wikipedias', [WikipediaController::class, 'getWikipedias']);
+Route::get('get-categoria-posts/{id}', [WikipediaController::class, 'getCategoriaByWiki']);
+Route::get('get-wikipedias/{id}', [WikipediaController::class, 'getWikipedia']);
+
 Route::group(['middleware' => 'auth:sanctum'], function() {
     Route::apiResource('users', UserController::class);
     Route::apiResource('posts', PostController::class);
