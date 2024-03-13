@@ -20,10 +20,9 @@ class WikipediaController extends Controller
         $validatedData = $request->validate([
             'titulo' => 'required',
             'contenido' => 'required',
-            'usuario_id' => 'required',
             'categoria_id' => 'required'
         ]);
-        //$validatedData['usuario_id'] = auth()->id();
+        $validatedData['usuario_id'] = auth()->id();
 
         $wikipedia = Wikipedia::create($validatedData);
 
@@ -67,7 +66,7 @@ class WikipediaController extends Controller
 
         return WikipediaResource::collection($posts);
     }
-    public function getPosts()
+    public function getWikipedias()
     {
         $wikipedias = Wikipedia::with('categorias')->latest()->paginate();
         return WikipediaResource::collection($wikipedias);

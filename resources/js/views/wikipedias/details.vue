@@ -3,15 +3,15 @@
         <div class="row g-5 mt-4">
             <div class="col-md-8">
             <h3 class="pb-4 mb-4 fst-italic border-bottom">
-                {{ post?.title }}
+                {{ wikipedia?.titulo }}
             </h3>
-            <p class="blog-post-meta">1 de Enero de 2024 by <a href="#">{{ post?.user?.name}}</a></p>
+            <p class="blog-wikipedia-meta">1 de Enero de 2024 by <a href="#">{{ wikipedia?.user?.name}}</a></p>
 
-            <article class="blog-post">
-                <div v-for="image in post?.media">
+            <article class="blog-wikipedia">
+              <!--  <div v-for="image in wikipedia?.media">
                     <img :src="image.original_url" alt="image" class="img-fluid">
-                </div>
-                <div class="mt-4" v-html="post?.content"></div>
+                </div>-->
+                <div class="mt-4" v-html="wikipedia?.contenido"></div>
             </article>
 
             <nav class="blog-pagination" aria-label="Pagination">
@@ -66,13 +66,13 @@ import { ref, onMounted } from 'vue';
 import { useRoute } from "vue-router";
 
 
-    const post = ref();
+    const wikipedia = ref();
     const categorias = ref();
     const route = useRoute()
 
     onMounted(() => {
-        axios.get('/api/get-post/' + route.params.id).then(({ data }) => {
-            post.value = data
+        axios.get('/api/get-wikipedia/' + route.params.id).then(({ data }) => {
+            wikipedia.value = data
         })
         axios.get('/api/categoria-list').then(({ data }) => {
             categorias.value = data.data

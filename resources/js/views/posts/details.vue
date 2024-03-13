@@ -5,7 +5,7 @@
             <h3 class="pb-4 mb-4 fst-italic border-bottom">
                 {{ post?.title }}
             </h3>
-            <p class="blog-post-meta">1 de Enero de 2024 by <a href="#">{{ post?.user?.name}}</a></p>
+            <p class="blog-post-meta">2 de Enero de 2024 by <a href="#">{{ post?.user?.name}}</a></p>
 
             <article class="blog-post">
                 <div v-for="image in post?.media">
