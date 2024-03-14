@@ -6,7 +6,7 @@
                 <div
                     class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                     <div class="col p-4 d-flex flex-column position-static">
-                        <strong v-for="categoria in wikipedia.categories" class="d-inline-block mb-2 text-primary">
+                        <strong v-for="categoria in wikipedia.categorias" class="d-inline-block mb-2 text-primary">
                             {{ categoria.nombre }}
                         </strong>
                         <h3 class="mb-0">{{ wikipedia.titulo }}</h3>
