@@ -10,7 +10,7 @@
                             {{ categoria.nombre }}
                         </strong>
                         <h3 class="mb-0">{{ wikipedia.titulo }}</h3>
-                        <div class="mb-1 text-muted">{{ wikipedia.created_at }}</div>
+                        <!-- <div class="mb-1 text-muted">{{ wikipedia.created_at }}</div> -->
                         <p class="card-text mb-auto">{{ wikipedia.contenido.substring(0, 90) + "..." }}</p>
                         <router-link :to="{ name: 'public-wikipedias.details', params: { id: wikipedia.id } }"
                                      class="stretched-link">Continue reading
@@ -28,11 +28,11 @@ import {ref, onMounted} from 'vue'
 import {useRoute} from "vue-router";
 
 const route = useRoute();
-const posts = ref();
+const wikipedias = ref();
 
 onMounted(() => {
     axios.get('/api/get-categoria-posts/' + route.params.id).then(({data}) => {
-        posts.value = data;
+        wikipedias.value = data;
     })
 })
 </script>

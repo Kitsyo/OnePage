@@ -5,7 +5,7 @@
             <h3 class="pb-4 mb-4 fst-italic border-bottom">
                 {{ post?.title }}
             </h3>
-            <p class="blog-post-meta">2 de Enero de 2024 by <a href="#">{{ post?.user?.name}}</a></p>
+            <p class="blog-post-meta">1 de Enero de 2024 by <a href="#">{{ post?.user?.name}}</a></p>
 
             <article class="blog-post">
                 <div v-for="image in post?.media">
@@ -28,15 +28,14 @@
                     <p class="mb-0">Personaliza esta sección para dar más información sobre la publicación, escritores, contenido o algo completamente diferente. Depende totalmente de ti.</p>
                     </div>-->
 
-                    <div class="p-4 bg-light rounded">
+                    <div class="p-4">
                         <h4 class="fst-italic">Categorias</h4>
-                        <ol v-if="categorias?.length > 0" class="list-unstyled">
-                            <li v-for="categoria in categorias" :key="categoria.id">
-                                <router-link :to="{ name: 'categoria-posts.index', params: { id: categoria.id } }">{{ categoria.nombre }}</router-link>
+                        <ol v-if="categories?.length > 0" class="list-unstyled">
+                            <li v-for="category in categories" :key="category.id">
+                                <router-link :to="{ name: 'category-posts.index', params: { id: category.id } }">{{ category.name }}</router-link>
                             </li>
                         </ol>
                     </div>
-
                     <!-- <div class="p-4">
                         <h4 class="fst-italic">Archives</h4>
                         <ol class="list-unstyled mb-0">
@@ -67,15 +66,15 @@ import { useRoute } from "vue-router";
 
 
     const post = ref();
-    const categorias = ref();
+    const categories = ref();
     const route = useRoute()
 
     onMounted(() => {
         axios.get('/api/get-post/' + route.params.id).then(({ data }) => {
             post.value = data
         })
-        axios.get('/api/categoria-list').then(({ data }) => {
-            categorias.value = data.data
+        axios.get('/api/category-list').then(({ data }) => {
+            categories.value = data.data
         })
     })
 </script>

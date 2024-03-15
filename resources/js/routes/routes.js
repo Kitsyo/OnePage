@@ -83,7 +83,7 @@ export default [
             {
                 path: 'categoria/:id',
                 name: 'categoria-posts.index',
-                component: () => import('../views/categoria/posts.vue'),
+                component: () => import('../views/categoria/wikipedias.vue'),
             },
             {
                 path: 'login',

@@ -62,9 +62,9 @@ class WikipediaController extends Controller
     }
     public function getCategoriaByWiki($id)
     {
-        $posts = Wikipedia::whereRelation('categorias', 'categoria_id', '=', $id)->paginate();
+        $wikipedias = Wikipedia::whereRelation('categorias', 'categoria_id', '=', $id)->paginate();
 
-        return WikipediaResource::collection($posts);
+        return WikipediaResource::collection($wikipedias);
     }
     public function getWikipedias()
     {
