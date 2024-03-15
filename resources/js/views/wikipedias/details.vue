@@ -11,8 +11,10 @@
               <!--  <div v-for="image in wikipedia?.media">
                     <img :src="image.original_url" alt="image" class="img-fluid">
                 </div>-->
-                <div v-for="categoria in wikipedia?.categorias">
-                    <div class="mt-1" v-html="categoria?.nombre"></div>
+                <div class="row">
+                    <div class="w-auto" v-for="categoria in wikipedia?.categorias" :key="categoria.id">
+                        <router-link :to="{ name: 'categoria-posts.index', params: { id: categoria.id } }">{{ categoria.nombre }}</router-link>        
+                    </div>
                 </div>
                 <div class="mt-4" v-html="wikipedia?.contenido"></div>
             </article>
