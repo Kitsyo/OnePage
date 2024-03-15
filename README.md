@@ -1,5 +1,6 @@
 #La parte del front end hay que hacer ccs propio, la del bCKEDened si puedes usar lo del david
 //
+
 # Características
 
 Ejemplo proyecto Laravel 10 + vue3 PAra DAW
