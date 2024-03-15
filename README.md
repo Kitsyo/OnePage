@@ -1,4 +1,4 @@
-#La parte del front end hay que hacer ccs propio, la del front ened si puedes usar lo del david
+#La parte del front end hay que hacer ccs propio, la del bCKEDened si puedes usar lo del david
 //
 # Características
 
