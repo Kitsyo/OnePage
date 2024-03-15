@@ -29,8 +29,7 @@ const model = ref([
     {
         label: 'Wiki',
         items: [
-            { label: 'Todas las entradas', icon: 'pi pi-fw pi-id-card', to: '/admin/users', permision: 'all' },
-            { label: 'Noticias', icon: 'pi pi-fw pi-check-square', to: '/admin/roles', permision:'all' }
+            { label: 'Todas las entradas', icon: 'pi pi-fw pi-id-card', to: '/admin/wikipedias', permision: 'all' }
         ]
     },
     {
@@ -43,7 +42,7 @@ const model = ref([
     {
         label: 'Blog',
         items: [
-            { label: 'Entradas', icon: 'pi pi-fw pi-pencil', to: '/admin/posts', permision: 'all' }
+            { label: 'Todas las entradas', icon: 'pi pi-fw pi-pencil', to: '/posts', permision: 'all' }
         ]
     }
 ]);

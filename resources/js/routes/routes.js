@@ -53,7 +53,7 @@ export default [
             {
                 path: '/',
                 name: 'home',
-                component: () => import('../views/admin/index.vue'), //hemos cambiado esta ruta por la de home
+                component: () => import('../views/home/index.vue'), //hemos cambiado esta ruta por la de home
             },
             {
                 path: 'posts',
@@ -118,12 +118,12 @@ export default [
         //     name: 'admin.index'
         // },
         beforeEnter: requireLogin,
-        meta: { breadCrumb: 'Menu' },
+        meta: { breadCrumb: 'Perfil' },
         children: [
             {
                 name: 'admin.index',
                 path: '',
-                component: () => import('../views/home/index.vue'), //hemos cambiado esta ruta por la de admin
+                component: () => import('../views/admin/index.vue'), //hemos cambiado esta ruta por la de admin
                 meta: { breadCrumb: 'Admin' }
             },
             {
@@ -204,12 +204,12 @@ export default [
                         name: 'wikipedias.create',
                         path: 'create',
                         component: wikipediasCreate,
-                        meta: { breadCrumb: 'Crear Wikipedia' }
+                        meta: { breadCrumb: 'Nueva entrada' }
                     },{
                         name: 'wikipedias.update',
                         path: 'update/:id',
                         component: wikipediasUpdate,
-                        meta: { breadCrumb: 'Actualizar Wikipedia',linked: false }, // Linked false es para deshabilitar la ruta de seguimiento en el encabezado
+                        meta: { breadCrumb: 'Actualizar Entrada',linked: false }, // Linked false es para deshabilitar la ruta de seguimiento en el encabezado
 
                     }
                 ]

@@ -11,7 +11,7 @@ const logoUrl = computed(() => {
 
 <template>
     <div class="layout-footer">
-        <i class="pi pi-heart-fill"></i>
+
         <span class="font-medium ml-2">OnePage : Iker Candalija, Adria Lasala</span>
     </div>
 </template>
