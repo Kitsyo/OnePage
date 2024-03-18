@@ -1,8 +1,8 @@
 <template>
     <div class="container">
-        <div class="row g-5 mt-4">
-            <div class="col-md-8">
-            <h3 class="pb-4 mb-4 fst-italic border-bottom">
+        <div class="row g-5 mt-4 mb-5">
+            <div class="col-md-8 bg-white text-dark">
+            <h3 class="pb-4 mb-4 fst-italic pt-4 border-bottom">
                 {{ wikipedia?.titulo }}
             </h3>
             <p class="blog-wikipedia-meta">1 de Enero de 2024 by <a href="#">{{ wikipedia?.user?.name}}</a></p>
@@ -13,16 +13,16 @@
                 </div>-->
                 <div class="row">
                     <div class="w-auto" v-for="categoria in wikipedia?.categorias" :key="categoria.id">
-                        <router-link :to="{ name: 'categoria-posts.index', params: { id: categoria.id } }">{{ categoria.nombre }}</router-link>        
+                        <router-link :to="{ name: 'categoria-posts.index', params: { id: categoria.id } }">{{ categoria.nombre }}</router-link>
                     </div>
                 </div>
                 <div class="mt-4" v-html="wikipedia?.contenido"></div>
             </article>
 
-            <nav class="blog-pagination" aria-label="Pagination">
+            <!--<nav class="blog-pagination" aria-label="Pagination">
                 <a class="btn btn-outline-primary rounded-pill" href="#">Más antigua</a>
                 <a class="btn btn-outline-secondary rounded-pill disabled">Más nueva</a>
-            </nav>
+            </nav>-->
 
             </div>
 
