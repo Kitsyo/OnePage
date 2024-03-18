@@ -4,11 +4,7 @@
             <div class="col-12 xl:col-12 ">
             <div class="col-12 xl:col-12">
                 <div class="card">
-                    <div class="card-header text-center">
-                        <h3>Banner Principal *Aqui cotenido tienda*</h3>
-                    </div>
-
-                    <div id="carouselExample" class="carousel slide">
+                    <div id="carouselBanner" class="carousel slide">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <img src="/images/prueba_banner2.jpg" class="d-block w-100" alt="...">
@@ -20,59 +16,87 @@
                                 <img src="/images/prueba_banner5.jpg" class="d-block w-100" alt="...">
                             </div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselBanner" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselBanner" data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
                     </div>
-
                 </div>
             </div>
         </div>
-
             <div class="col-12 xl:col-12">
                 <div class="card mt-5 text-center">
                     <h3>Ultimas Noticias</h3>
                 </div>
-            </div>
-            <!-- Inicio modulo noticia -->
-            <div class="col-12 xl:col-6">
-                <div class="card text-center">
-                    <div class="card-header color-fondo-blanco">
-                        <h4>Titulo Noticia</h4>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Publicante (nombre)</h5>
-                        <p class="card-text">Contenido de la noticia, un resumen de las 5 o 6 primeras lineas</p>
-                        <a href="#" class="btn btn-primary">Noticia Completa</a>
-                    </div>
-                    <div class="card-footer color-fondo-blanco text-body-secondary">
-                        Fecha publicacion
+                <div class="d-flex justify-content-center">
+                    <div id="carouselExampleIndicators" class="carousel slide carrousel-size ">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active bg-primary" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class="bg-primary" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" class="bg-primary" aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="card text-center">
+                                    <div class="card-header color-fondo-blanco">
+                                        <h4>Titulo Noticia</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Publicante (nombre)</h5>
+                                        <p class="card-text">Contenido de la noticia, un resumen de las 5 o 6 primeras lineas</p>
+                                        <a href="#" class="btn btn-primary">Noticia Completa</a>
+                                    </div>
+                                    <div class="card-footer color-fondo-blanco text-body-secondary">
+                                        Fecha publicacion
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card text-center">
+                                    <div class="card-header color-fondo-blanco">
+                                        <h4>Titulo Noticia</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Publicante (nombre)</h5>
+                                        <p class="card-text">Contenido de la noticia, un resumen de las 5 o 6 primeras lineas</p>
+                                        <a href="#" class="btn btn-primary">Noticia Completa</a>
+                                    </div>
+                                    <div class="card-footer color-fondo-blanco text-body-secondary">
+                                        Fecha publicacion
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card text-center">
+                                    <div class="card-header color-fondo-blanco">
+                                        <h4>Titulo Noticia</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Publicante (nombre)</h5>
+                                        <p class="card-text">Contenido de la noticia, un resumen de las 5 o 6 primeras lineas</p>
+                                        <a href="#" class="btn btn-primary">Noticia Completa</a>
+                                    </div>
+                                    <div class="card-footer color-fondo-blanco text-body-secondary">
+                                        Fecha publicacion
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
                     </div>
                 </div>
             </div>
-            <!-- Fin modulo noticia -->
-            <!-- Inicio modulo noticia -->
-            <div class="col-12 xl:col-6">
-                <div class="card text-center">
-                    <div class="card-header color-fondo-blanco">
-                        <h4>Titulo Noticia</h4>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Publicante (nombre)</h5>
-                        <p class="card-text">Contenido de la noticia, un resumen de las 5 o 6 primeras lineas</p>
-                        <a href="#" class="btn btn-primary">Noticia Completa</a>
-                    </div>
-                    <div class="card-footer color-fondo-blanco text-body-secondary">
-                        Fecha publicacion
-                    </div>
-                </div>
-            </div>
-            <!-- Fin modulo noticia -->
             <div class="col-12 xl:col-12">
                 <div class="mt-5 card text-center">
                     <i></i>
@@ -189,13 +213,15 @@
     background-color:#ffffff;
 }
 .grid-center {
-    width: 1140px;
+    width: 1040px;
     display: flex;
     flex-wrap: wrap;
     margin-right: -0.5rem;
     margin-left: -0.5rem;
     margin-top: -0.5rem;
 }
-
-
+.carrousel-size{
+    width: 680px;
+    display: flex;
+}
 </style>

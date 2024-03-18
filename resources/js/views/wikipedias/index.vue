@@ -1,10 +1,13 @@
 <template>
     <div class="container">
-        <h2 class="text-center my-4">Wikipedias</h2>
+        <div class="d-flex justify-content-center">
+            <div class="card mt-4 titulo-wiki">
+                <h2 class="text-center text-white mt-4">Wikipedias</h2>
+            </div>
+        </div>
         <div class="row mb-2">
             <div v-for="wikipedia in wikipedias?.data" :key="wikipedia.id" class="col-md-6">
-                <div
-                    class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative bg-white text-dark">
                     <div class="col p-4 d-flex flex-column position-static">
                         <strong v-for="categoria in wikipedia.categorias" class="d-inline-block mb-2 text-primary">
                             {{ categoria.nombre }}
@@ -34,3 +37,11 @@ onMounted(() => {
     })
 })
 </script>
+<style>
+.titulo-wiki{
+    background-color:#252525;
+    width:250px;
+    height:150px;
+    border:none;
+}
+</style>
