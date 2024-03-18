@@ -48,6 +48,11 @@ Route::delete('productos/{id}', [ProductoController::class, 'destroy']); // Prod
 Route::put('productos/update/{id}', [ProductoController::class, 'update']);
 Route::get('productos/{id}', [ProductoController::class, 'edit']);
 
+Route::get('get-productos', [ProductoController::class, 'getproductos']);
+Route::get('get-categoria-productos/{id}', [ProductoController::class, 'getCategoriaByProducto']);
+Route::get('get-producto/{id}', [ProductoController::class, 'getproducto']);
+
+
 //  PEDIDOS
 Route::get('pedidos', [PedidoController::class, 'index']);
 Route::post('pedidos/', [PedidoController::class, 'store']);

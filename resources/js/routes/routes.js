@@ -86,6 +86,21 @@ export default [
                 component: () => import('../views/categoria/wikipedias.vue'),
             },
             {
+                path: 'producto',
+                name: 'public-productos.index',
+                component: () => import('../views/productos/index.vue'),
+            },
+            {
+                path: 'producto/:id',
+                name: 'public-productos.details',
+                component: () => import('../views/productos/details.vue'),
+            },
+            {
+                path: 'categoria/:id',
+                name: 'categoria-productos.index',
+                component: () => import('../views/categoria/productos.vue'),
+            },
+            {
                 path: 'login',
                 name: 'auth.login',
                 component: () => import('../views/login/Login.vue'),
