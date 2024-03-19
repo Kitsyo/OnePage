@@ -1,7 +1,7 @@
 <template>
     <div class="container">
-        <div class="row g-5 mt-4">
-            <div class="col-md-8">
+        <div class="row g-5 mt-4 mb-5">
+            <div class="col-md-8 bg-white text-dark">
             <h3 class="pb-4 mb-4 fst-italic border-bottom">
                 {{ producto?.nombre }}
             </h3>
