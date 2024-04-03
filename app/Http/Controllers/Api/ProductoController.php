@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Producto;
 use App\Models\Task;
 use Illuminate\Http\Request;
+use App\Http\Resources\ProductoResource;
+
 
 class ProductoController extends Controller
 {
@@ -58,6 +60,25 @@ class ProductoController extends Controller
         $producto = Producto::find($id);
 
         return response()->json(['success' => true, 'data' => $producto]);
+    }
+
+    public function getCategoriaByProducto($id)
+    {
+        $productos = producto::whereRelation('categorias', 'categoria_id', '=', $id)->paginate();
+
+        return ProductoResource::collection($productos);
+    }
+    public function getProductos()
+    {
+        $productos = Producto::all();
+        //$productos = producto::with('categorias')->latest()->paginate();
+        return ProductoResource::collection($productos);
+
+    }
+
+    public function getProducto($id)
+    {
+        return producto::with('categorias')->findOrFail($id);
     }
 }
 

@@ -17,7 +17,7 @@
                             <router-link :to="{ name : 'public-posts.index'}" class="nav-link">Blog</router-link>
                         </li>
                         <li class="nav-item">
-                            <router-link :to="{ name : 'public-posts.index'}" class="nav-link">Tienda</router-link>
+                            <router-link :to="{ name : 'public-productos.index'}" class="nav-link">Tienda</router-link>
                         </li>
                         <li class="nav-item">
                             <router-link :to="{ name : 'public-wikipedias.index'}" class="nav-link">Wikipedia</router-link>

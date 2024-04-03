@@ -2,7 +2,7 @@
     <div class="container">
         <div class="d-flex justify-content-center">
             <div class="card mt-4 titulo-wiki">
-                <h2 class="text-center text-white mt-4">Blog Posts</h2>
+                <h2 class="text-center text-white mt-4">Post</h2>
             </div>
         </div>
         <div class="row mb-2">
