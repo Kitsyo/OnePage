@@ -19,8 +19,7 @@
                         <h3 class="mb-0">{{ post.title }}</h3>
                         <div class="mb-1 text-muted">12 de Enero</div>
                         <div class="card-text mb-auto" v-html="post.content.substring(0, 150) + '...'"></div>
-                        <router-link :to="{ name: 'public-posts.details', params: { id: post.id } }"
-                                     class="stretched-link">Continual leyendo
+                        <router-link :to="{ name: 'public-posts.details', params: { id: post.id } }" class="stretched-link">Continual leyendo
                         </router-link>
                     </div>
                 </div>
