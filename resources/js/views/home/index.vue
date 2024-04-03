@@ -1,9 +1,8 @@
 <template>
     <div class="m-5 d-flex justify-content-center align-items-center">
         <div class="grid-center">
-            <div class="col-12 xl:col-12 ">
             <div class="col-12 xl:col-12">
-                <div class="card">
+                <div class="container">
                     <div id="carouselBanner" class="carousel slide">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
@@ -27,59 +26,29 @@
                     </div>
                 </div>
             </div>
-        </div>
             <div class="col-12 xl:col-12">
-                <div class="card mt-5 text-center">
+                <div class="rounded mt-5 text-center">
                     <h3>Ultimas Noticias</h3>
                 </div>
                 <div class="d-flex justify-content-center">
-                    <div id="carouselExampleIndicators" class="carousel slide carrousel-size ">
+                    <div id="carouselExampleIndicators" class="carousel slide carrousel-size carousel-dark slide">
                         <div class="carousel-indicators">
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active bg-primary" aria-current="true" aria-label="Slide 1"></button>
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class="bg-primary" aria-label="Slide 2"></button>
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" class="bg-primary" aria-label="Slide 3"></button>
                         </div>
                         <div class="carousel-inner">
-                            <div class="carousel-item active">
+                            <div v-for="post in posts?.data" :key="post.id" class="carousel-item active">
                                 <div class="card text-center">
                                     <div class="card-header color-fondo-blanco">
-                                        <h4>Titulo Noticia</h4>
+                                        <h4>{{ post.title }}</h4>
                                     </div>
                                     <div class="card-body">
-                                        <h5 class="card-title">Publicante (nombre)</h5>
-                                        <p class="card-text">Contenido de la noticia, un resumen de las 5 o 6 primeras lineas</p>
-                                        <a href="#" class="btn btn-primary">Noticia Completa</a>
+                                        <h5 class="card-title"></h5>
+                                        <p class="card-text" v-html="post.content.substring(0, 150) + '...'"></p>
                                     </div>
-                                    <div class="card-footer color-fondo-blanco text-body-secondary">
-                                        Fecha publicacion
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="card text-center">
-                                    <div class="card-header color-fondo-blanco">
-                                        <h4>Titulo Noticia</h4>
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="card-title">Publicante (nombre)</h5>
-                                        <p class="card-text">Contenido de la noticia, un resumen de las 5 o 6 primeras lineas</p>
-                                        <a href="#" class="btn btn-primary">Noticia Completa</a>
-                                    </div>
-                                    <div class="card-footer color-fondo-blanco text-body-secondary">
-                                        Fecha publicacion
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="card text-center">
-                                    <div class="card-header color-fondo-blanco">
-                                        <h4>Titulo Noticia</h4>
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="card-title">Publicante (nombre)</h5>
-                                        <p class="card-text">Contenido de la noticia, un resumen de las 5 o 6 primeras lineas</p>
-                                        <a href="#" class="btn btn-primary">Noticia Completa</a>
-                                    </div>
+                                    <router-link :to="{ name: 'public-posts.details', params: { id: post.id } }" class="mb-2 stretched-link">Continual leyendo
+                                    </router-link>
                                     <div class="card-footer color-fondo-blanco text-body-secondary">
                                         Fecha publicacion
                                     </div>
@@ -97,14 +66,14 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 xl:col-12">
-                <div class="mt-5 card text-center">
+            <div class="container col-12 xl:col-12">
+                <div class="mt-5 text-center">
                     <i></i>
                     <h3>Multimedia</h3>
                 </div>
             </div>
             <div class="col-6 xl:col-6">
-                <div class="card">
+                <div class="container">
                     <h4 class="text-center">Manga</h4>
                     <div class="accordion" id="accordionOne">
                         <div class="accordion-item">
@@ -153,8 +122,8 @@
                 </div>
             </div>
             <div class="col-6 xl:col-6">
-                <div class="card">
-                    <h5 class="text-center">Videos</h5>
+                <div class="container">
+                    <h4 class="text-center">Videos</h4>
                     <div class="accordion" id="accordionTwo">
                         <div class="accordion-item">
                             <h5 class="accordion-header">
@@ -206,22 +175,30 @@
 </template>
 
 <script setup>
+import axios from 'axios';
+import {ref, onMounted} from 'vue'
+
+const posts = ref();
+
+onMounted(() => {
+    axios.get('/api/get-posts').then(({data}) => {
+        posts.value = data;
+    })
+})
 </script>
 
 <style scoped>
-.color-fondo-blanco{
-    background-color:#ffffff;
-}
 .grid-center {
-    width: 1040px;
     display: flex;
     flex-wrap: wrap;
-    margin-right: -0.5rem;
-    margin-left: -0.5rem;
-    margin-top: -0.5rem;
 }
 .carrousel-size{
-    width: 680px;
     display: flex;
+}
+h3{
+    color:#FAFAFA;
+}
+h4{
+    color:#FAFAFA;
 }
 </style>
