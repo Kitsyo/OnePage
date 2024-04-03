@@ -8,7 +8,7 @@
                     <div class="col p-4 d-flex flex-column position-static">
 
                         <h3 class="mb-0">{{ producto.nombre }}</h3>
-                        <div class="mb-1 text-muted">{{ producto.categoria_id }}</div>                                
+                        <div class="mb-1 text-muted">{{ producto.categoria }}</div>                                
                         <div class="card-text mb-auto" v-html="producto.descripcion.substring(0, 50) + '...'"></div>
                         <div class="card-text mb-auto" v-html="producto.precio + '€'"></div>
                         <router-link :to="{ name: 'public-productos.details', params: { id: producto.id } }"

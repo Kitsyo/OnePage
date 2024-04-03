@@ -23,7 +23,7 @@ class ProductoController extends Controller
            'nombre' => 'required',
             'descripcion' => 'required',
             'precio' => 'required',
-            'idCategoria' => 'required'
+            'categoria_id' => 'required'
         ]);
         $producto = $request->all();
         $tarea = Producto::create($producto);
@@ -47,7 +47,7 @@ class ProductoController extends Controller
             'nombre' => 'required',
             'descripcion' => 'required',
             'precio' => 'required',
-            'idCategoria' => 'required'
+            'categoria_id' => 'required'
         ]);
 
         $dateToUpdate = $request->all();
@@ -64,13 +64,15 @@ class ProductoController extends Controller
 
     public function getCategoriaByProducto($id)
     {
-        $productos = producto::whereRelation('categorias', 'categoria_id', '=', $id)->paginate();
+        $productos = Producto::with('categorias')->where('categoria_id', $id)->paginate();
 
         return ProductoResource::collection($productos);
     }
     public function getProductos()
     {
-        $productos = Producto::all();
+        //$productos = Producto::all();
+        $productos = Producto::with('categorias')->get();
+
         //$productos = producto::with('categorias')->latest()->paginate();
         return ProductoResource::collection($productos);
 

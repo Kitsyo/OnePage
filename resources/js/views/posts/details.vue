@@ -1,8 +1,8 @@
 <template>
     <div class="container">
-        <div class="row g-5 mt-4 mb-5">
-            <div class="col-md-8 bg-white text-dark">
-            <h3 class="pb-4 mb-4 fst-italic pt-4 border-bottom">
+        <div class="row g-5 mt-4">
+            <div class="col-md-8">
+            <h3 class="pb-4 mb-4 fst-italic border-bottom">
                 {{ post?.title }}
             </h3>
             <p class="blog-post-meta">1 de Enero de 2024 by <a href="#">{{ post?.user?.name}}</a></p>
@@ -28,7 +28,7 @@
                     <p class="mb-0">Personaliza esta sección para dar más información sobre la publicación, escritores, contenido o algo completamente diferente. Depende totalmente de ti.</p>
                     </div>
 
-                    <div class="p-4  bg-white text-dark rounded">
+                    <div class="p-4">
                         <h4 class="fst-italic">Categorias</h4>
                         <ol v-if="categories?.length > 0" class="list-unstyled">
                             <li v-for="category in categories" :key="category.id">

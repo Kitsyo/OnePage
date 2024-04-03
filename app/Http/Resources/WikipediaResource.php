@@ -19,7 +19,7 @@ class WikipediaResource extends JsonResource
         return [
             'id' => $this->id,
             'titulo' => $this->titulo,
-            'categorias' => $this->categorias,
+            'categoria_id' => $this->categoria_id,
             'contenido' => $this->contenido,
             'created_at' => $this->created_at->toDateString()
         ];

@@ -48,4 +48,9 @@ class User extends Authenticatable
     {
         $this->notify(new UserResetPasswordNotification($token));
     }
+
+    public function progreso()
+    {
+        return $this->hasMany(progreso_usuarios::class);
+    }
 }

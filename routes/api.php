@@ -12,6 +12,9 @@ use App\Http\Controllers\api\WikipediaController; // Task controller import
 use App\Http\Controllers\api\NoticiaController; // Noticia controller import
 use App\Http\Controllers\api\ProductoController; // Producto controller import
 use App\Http\Controllers\api\PedidoController; //Pedido controller import
+use App\Http\Controllers\api\CapituloController;
+use App\Http\Controllers\api\MangaController;
+use App\Http\Controllers\api\ProgresoUsuarioController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use Illuminate\Http\Request;
@@ -67,6 +70,21 @@ Route::get('categoria-list', [CategoriaController::class, 'getList']);
 Route::get('get-wikipedias', [WikipediaController::class, 'getWikipedias']);
 Route::get('get-categoria-posts/{id}', [WikipediaController::class, 'getCategoriaByWiki']);
 Route::get('get-wikipedia/{id}', [WikipediaController::class, 'getWikipedia']);
+
+//CAPITULOS
+Route::get('/capitulos', [CapituloController::class, 'index']);
+Route::get('/capitulos/{id}', [CapituloController::class, 'show']);
+
+Route::get('get-categoria-capitulos/{id}', [CapituloController::class, 'getCategoriaByCaptulo']);
+
+//MANGAS
+Route::get('/mangas', [MangaController::class, 'index']);
+Route::get('/mangas/{id}', [MangaController::class, 'show']);
+
+//PROGRESO_USUARIOS
+Route::get('/progreso-usuario/{user_id}', [ProgresoUsuarioController::class, 'index']);
+Route::post('/progreso-usuario', [ProgresoUsuarioController::class, 'store']);
+Route::put('/progreso-usuario/{id}', [ProgresoUsuarioController::class, 'update']);
 
 Route::group(['middleware' => 'auth:sanctum'], function() {
     Route::apiResource('users', UserController::class);
