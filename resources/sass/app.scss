@@ -12,17 +12,14 @@
 html {
     font-size: 14px;
 }
-
-body {
-    //background-image: url("/public/images/prueba_fondo3.jpg") !important;
-    background-color: var(--bs-dark) !important;
-    font-family: var(--font-family);
-    font-weight: normal;
-    background: var(--surface-ground);
-    color: var(--text-color);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-
+.pruebita {
+    background-image: url(/public/images/prueba_banner5.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:100%;
+    height:500px;
+    margin:0;
 }
 
 a {
@@ -37,3 +34,13 @@ ol{
     margin: 0px;
     padding-left: 0rem;
 }
+/*
+//background-image: url("/public/images/prueba_fondo3.jpg") !important;
+background-color: var(--bs-dark) !important;
+font-family: var(--font-family);
+font-weight: normal;
+background: var(--surface-ground);
+color: var(--text-color);
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+*/

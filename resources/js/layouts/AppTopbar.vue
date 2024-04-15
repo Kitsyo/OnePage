@@ -4,8 +4,7 @@
             <i class="pi pi-list"></i>
         </button>
         <router-link to="/" class="layout-topbar-logo d-flex justify-content-center ajustar">
-            <!--<img src="/images/logo.svg" alt="logo" /> -->
-            <span>Logo</span>
+            <img class="logo_prueba" src="/images/logo_onepage_bueno.svg" alt="logo"/>
         </router-link>
         <nav class="layout-topbar-menu">
             <div class="container-fluid">
@@ -91,5 +90,9 @@ const topbarMenuClasses = computed(() => {
 .ajustar{
     width:100px;
     margin-left:100px
+}
+.logo_prueba{
+    height:88px;
+    width:145px;
 }
 </style>

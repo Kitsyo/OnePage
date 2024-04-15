@@ -1,177 +1,45 @@
 <template>
-    <div class="m-5 d-flex justify-content-center align-items-center">
-        <div class="grid-center">
-            <div class="col-12 xl:col-12">
-                <div class="container">
-                    <div id="carouselBanner" class="carousel slide">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="/images/prueba_banner2.jpg" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="/images/prueba_banner3.jpg" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="/images/prueba_banner5.jpg" class="d-block w-100" alt="...">
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselBanner" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselBanner" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
+    <div class="d-flex justify-content-center align-items-center">
+        <div class="card pruebita"></div>
+    </div>
+    <section class="section-bg">
+        <div class="container">
+            <div class="row d-felx justify-content-center align-items-center">
+                <!-- Contenedor para la imagen -->
+                <div class="col-md-6">
+                    <img src="/images/prueba-cartel2.png" alt="cartel de se busca" class="img-fluid">
                 </div>
-            </div>
-            <div class="col-12 xl:col-12">
-                <div class="rounded mt-5 text-center">
-                    <h3>Ultimas Noticias</h3>
-                </div>
-                <div class="d-flex justify-content-center">
-                    <div id="carouselExampleIndicators" class="carousel slide carrousel-size carousel-dark slide">
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active bg-primary" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class="bg-primary" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" class="bg-primary" aria-label="Slide 3"></button>
-                        </div>
-                        <div class="carousel-inner">
-                            <div v-for="post in posts?.data" :key="post.id" class="carousel-item active">
-                                <div class="card text-center">
-                                    <div class="card-header color-fondo-blanco">
-                                        <h4>{{ post.title }}</h4>
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="card-title"></h5>
-                                        <p class="card-text" v-html="post.content.substring(0, 150) + '...'"></p>
-                                    </div>
-                                    <router-link :to="{ name: 'public-posts.details', params: { id: post.id } }" class="mb-2 stretched-link">Continual leyendo
-                                    </router-link>
-                                    <div class="card-footer color-fondo-blanco text-body-secondary">
-                                        Fecha publicacion
-                                    </div>
-                                </div>
+                <!-- Contenedor para el formulario -->
+                <div class="col-md-6">
+                    <div class="text-black form-container">
+                        <h3>¿Aún no has desembarcado?</h3>
+                        <h4>Regístrate gratis</h4>
+                        <form>
+                            <div class="form-group">
+                                <label for="nombre">Nombre:</label>
+                                <input type="text" class="form-control" id="nombre" placeholder="Nombre">
                             </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="container col-12 xl:col-12">
-                <div class="mt-5 text-center">
-                    <i></i>
-                    <h3>Multimedia</h3>
-                </div>
-            </div>
-            <div class="col-6 xl:col-6">
-                <div class="container">
-                    <h4 class="text-center">Manga</h4>
-                    <div class="accordion" id="accordionOne">
-                        <div class="accordion-item">
-                            <h5 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    <b>"categoria1"</b>
-                                </button>
-                            </h5>
-                            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionOne">
-                                <div class="accordion-body">
-                                    <p>Tomo 1</p>
-                                    <p>Tomo 2</p>
-                                    <p>Tomo 3</p>
-                                </div>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" class="form-control" id="email" placeholder="Email">
                             </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h5 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    <b>"categoria2"</b>
-                                </button>
-                            </h5>
-                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionOne">
-                                <div class="accordion-body">
-                                    <p>Tomo 1</p>
-                                    <p>Tomo 2</p>
-                                    <p>Tomo 3</p>
-                                </div>
+                            <div class="form-group">
+                                <label for="password">Contraseña:</label>
+                                <input type="password" class="form-control" id="password" placeholder="Cotnraseña">
                             </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h5 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    <b>"categoria3"</b>
-                                </button>
-                            </h5>
-                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionOne">
-                                <div class="accordion-body">
-                                    <p>Tomo 1</p>
-                                    <p>Tomo 2</p>
-                                    <p>Tomo 3</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 xl:col-6">
-                <div class="container">
-                    <h4 class="text-center">Videos</h4>
-                    <div class="accordion" id="accordionTwo">
-                        <div class="accordion-item">
-                            <h5 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseOne">
-                                    <b>"categoria1"</b>
-                                </button>
-                            </h5>
-                            <div id="collapseFour" class="accordion-collapse collapse show" data-bs-parent="#accordionTwo">
-                                <div class="accordion-body">
-                                    <p>Cap. 1</p>
-                                    <p>Cap. 2</p>
-                                    <p>Cap. 3</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h5 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseTwo">
-                                    <b>"categoria2"</b>
-                                </button>
-                            </h5>
-                            <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionTwo">
-                                <div class="accordion-body">
-                                    <p>Cap. 1</p>
-                                    <p>Cap. 2</p>
-                                    <p>Cap. 3</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h5 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseThree">
-                                    <b>"categoria3"</b>
-                                </button>
-                            </h5>
-                            <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionTwo">
-                                <div class="accordion-body">
-                                    <p>Cap. 1</p>
-                                    <p>Cap. 2</p>
-                                    <p>Cap. 3</p>
-                                </div>
-                            </div>
-                        </div>
+                            <button type="submit" class="btn btn-primary mt-3">Enviar</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+        <div class="mt-5 text-black">
+            <h2>Mangas a la carta</h2>
+        </div>
+        <div class="mt-5">
+            <img src="/images/separador.svg" alt="Separador" >
+        </div>
+    </section>
 </template>
 
 <script setup>
@@ -188,17 +56,19 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.grid-center {
-    display: flex;
-    flex-wrap: wrap;
+.section-bg {
+    background-image: url('/images/prueba_fondo2.jpg'); /* Reemplaza 'tu-imagen.jpg' con la ruta de tu imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 80px 0;
+    text-align: center;
 }
-.carrousel-size{
-    display: flex;
-}
-h3{
-    color:#FAFAFA;
-}
-h4{
-    color:#FAFAFA;
+.form-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px;
+    max-width: 500px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centrado horizontal */
 }
 </style>

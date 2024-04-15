@@ -1,7 +1,9 @@
 <template>
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <div class="container">
-            <router-link to="/" class="navbar-brand">Logo</router-link>
+            <router-link to="/" class="layout-topbar-logo d-flex justify-content-center ajustar">
+                <img class="logo_prueba" src="/images/logo_onepage_bueno.svg" alt="logo"/>
+            </router-link>
             <a class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </a>
@@ -59,3 +61,9 @@ import LocaleSwitcher from "../components/LocaleSwitcher.vue";
     const user = computed(() => store.getters["auth/user"])
     const { processing, logout } = useAuth();
 </script>
+<style scoped>
+.logo_prueba{
+    height:88px;
+    width:145px;
+}
+</style>
