@@ -12,6 +12,7 @@
                 <!-- Contenedor para el formulario -->
                 <div class="col-md-6">
                     <div class="text-black form-container">
+                        <img src="/images/prueba_clavo.svg" class="clavo_img" alt="cartel de se busca">
                         <h3>¿Aún no has desembarcado?</h3>
                         <h4>Regístrate gratis</h4>
                         <form>
@@ -40,6 +41,7 @@
             <img src="/images/separador.svg" alt="Separador" >
         </div>
     </section>
+
 </template>
 
 <script setup>
@@ -57,7 +59,7 @@ onMounted(() => {
 
 <style scoped>
 .section-bg {
-    background-image: url('/images/prueba_fondo2.jpg'); /* Reemplaza 'tu-imagen.jpg' con la ruta de tu imagen de fondo */
+    background-image: url('/images/prueba_fondo2.jpg');
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -70,5 +72,9 @@ onMounted(() => {
     padding: 20px;
     max-width: 500px; /* Ancho máximo del contenedor */
     margin: 0 auto; /* Centrado horizontal */
+}
+.clavo_img{
+    width:32px;
+    height:32px;
 }
 </style>
